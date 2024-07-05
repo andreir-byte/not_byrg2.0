@@ -1,0 +1,20 @@
+std::string trim(std::string s){
+  int l = 0, r = s.length();
+
+  while ((l < r) && std::isspace(s[l])) {
+    l++;
+  }
+  while ((r > l) && std::isspace(s[r - 1])) {
+    r--;
+  }
+  return s.substr(l, r - l);
+}
+std::string extractT(std::string s){
+    int l=0, r=s.length();
+    while(l<r && s[l]!=' ')
+        l++;
+    std::string tmp=s.substr(0,l);
+    s=s.substr(l);
+    s=trim(s);
+    return tmp;
+}
